@@ -4,6 +4,9 @@ import os
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
+A = np.array([[1,1,3],[0,1,3],[-1,3,0]])
+b = np.array([[1],[3],[5]])
+
 class MyGUI(QMainWindow):
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     def __init__(self):
@@ -20,6 +23,7 @@ class MyGUI(QMainWindow):
         self.rbtManual.clicked.connect(self.check)
         self.rbtFisier.clicked.connect(self.check)
         self.btnAlegeFisier.clicked.connect(self.alegeFisier)
+        self.btnIntroducere.clicked.connect(self.introducereMatrice)
         
     def login(self):
         if self.txtUtilizator.text() == "1" and self.txtParola.text() == "1":
@@ -28,6 +32,11 @@ class MyGUI(QMainWindow):
             self.rbtFisier.setEnabled(True)
             self.rbtAutomat.setEnabled(True)
             self.btnIntroducere.setEnabled(True)
+            self.txtLinii.setEnabled(True)
+            self.txtColoane.setEnabled(True)
+            self.lblDimensiune.setEnabled(True)
+            self.lblIntrebare_3.setEnabled(True)
+            self.lblIntrebare_4.setEnabled(True)
         else:
             message = QMessageBox()
             message.setText("Credentiale invalide.")      
@@ -39,13 +48,35 @@ class MyGUI(QMainWindow):
             
     def check(self):
         if(self.rbtManual.isChecked()):
-            self.txtManual.setEnabled(True)
+            self.txtManualA.setEnabled(True)
+            self.txtManualB.setEnabled(True)
         else:
-            self.txtManual.setEnabled(False)
+            self.txtManualA.setEnabled(False)
+            self.txtManualB.setEnabled(False)
         if(self.rbtFisier.isChecked()):
             self.btnAlegeFisier.setEnabled(True)
         else:
             self.btnAlegeFisier.setEnabled(False)
+    
+    def introducereMatrice(self):
+        linii = self.txtLinii.text()
+        coloane = self.txtColoane.text()
+        matriceA = self.txtManualA.text()
+        matriceB = self.txtManualB.text ()
+        
+        l = int(float(linii))
+        c = int(float(coloane))
+   
+        elemeteleMatA = list(map(int, matriceA.split(" ")))
+        A = np.array(elemeteleMatA).reshape(l, c)
+        elemeteleMatB = list(map(int, matriceB.split(" ")))
+        B = np.array(elemeteleMatB).reshape(l, c - l + 1)
+        
+        print(l)
+        print(A)
+        print(B)
+        
+        
 
 def main():
     app = QApplication([])
@@ -54,8 +85,6 @@ def main():
 
 main()
 
-A = np.array([[1,1,3],[0,1,3],[-1,3,0]])
-b = np.array([[1],[3],[5]])
 
 def eliminare_gauss(A, b):
     if A.shape[0] != A.shape[1]:
