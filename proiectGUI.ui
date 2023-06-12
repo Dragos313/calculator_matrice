@@ -226,9 +226,16 @@
      <rect>
       <x>10</x>
       <y>190</y>
-      <width>151</width>
+      <width>101</width>
       <height>111</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
    </widget>
    <widget class="QPushButton" name="btnCalculeaza">
@@ -237,7 +244,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>200</x>
       <y>220</y>
       <width>51</width>
       <height>41</height>
@@ -258,6 +265,13 @@
       <width>71</width>
       <height>111</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -377,6 +391,26 @@
     </property>
     <property name="text">
      <string>Coloane</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="txtMatriceExtinsa_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>190</y>
+      <width>51</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
    </widget>
   </widget>

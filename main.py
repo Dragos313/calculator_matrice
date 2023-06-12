@@ -61,20 +61,21 @@ class MyGUI(QMainWindow):
     def introducereMatrice(self):
         linii = self.txtLinii.text()
         coloane = self.txtColoane.text()
-        matriceA = self.txtManualA.text()
-        matriceB = self.txtManualB.text ()
-        
         l = int(float(linii))
         c = int(float(coloane))
-   
-        elemeteleMatA = list(map(int, matriceA.split(" ")))
-        A = np.array(elemeteleMatA).reshape(l, c)
-        elemeteleMatB = list(map(int, matriceB.split(" ")))
-        B = np.array(elemeteleMatB).reshape(l, c - l + 1)
-        
-        print(l)
-        print(A)
-        print(B)
+        A = []
+        b = []
+        if(self.rbtManual.isChecked()):
+            matriceA = self.txtManualA.text()
+            matriceB = self.txtManualB.text ()
+            elemeteleMatA = list(map(int, matriceA.split(" "))) 
+            A = np.array(elemeteleMatA).reshape(l, c)
+            elemeteleMatB = list(map(int, matriceB.split(" ")))
+            b = np.array(elemeteleMatB).reshape(l, c - l + 1)
+            
+        self.txtMatriceExtinsa.setText(str(A))
+        self.txtMatriceExtinsa_2.setText(str(b))
+        return A, b
         
         
 
