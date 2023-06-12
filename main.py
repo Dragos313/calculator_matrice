@@ -13,7 +13,7 @@ class MyGUI(QMainWindow):
         super(MyGUI, self).__init__()
         uic.loadUi("proiectGUI.ui", self)
         
-        self.setWindowTitle("Python ")
+        self.setWindowTitle("Calculator matrice")
         self.UiComponents()
         
         self.show()
@@ -62,13 +62,18 @@ class MyGUI(QMainWindow):
     def introducereMatrice(self):
         linii = self.txtLinii.text()
         coloane = self.txtColoane.text()
+        if(linii == "" and  coloane == "" or linii != coloane):
+            message = QMessageBox()
+            message.setText("Numarul de linii si/sau coloane este invalid.")      
+            message.exec_()
+            return
         l = int(float(linii))
         c = int(float(coloane))
         A = []
         b = []
         if(self.rbtManual.isChecked()):
             matriceA = self.txtManualA.text()
-            matriceB = self.txtManualB.text ()
+            matriceB = self.txtManualB.text()
             elemeteleMatA = list(map(int, matriceA.split(" "))) 
             A = np.array(elemeteleMatA).reshape(l, c)
             elemeteleMatB = list(map(int, matriceB.split(" ")))
@@ -76,7 +81,15 @@ class MyGUI(QMainWindow):
         elif(self.rbtAutomat.isChecked()):
             A = np.random.randint(1, 20,(l, c))
             b = np.random.randint(1, 20,(l, c - l + 1))
-            
+        elif(self.rbtFisier.isChecked()):
+            caleFisier = self.txtFisier.text()
+            with open(caleFisier) as cf:
+                fisier = cf.readlines()
+                elemeteleMatA = list(map(int, fisier[0].split(" ")))
+                A = np.array(elemeteleMatA).reshape(l, c)
+                elemeteleMatB = list(map(int, fisier[1].split(" ")))
+                b = np.array(elemeteleMatB).reshape(l, c - l + 1)
+            cf.close()
         self.txtMatriceExtinsa.setText(str(A))
         self.txtMatriceExtinsa_2.setText(str(b))
         self.btnCalculeaza.setEnabled(True)
