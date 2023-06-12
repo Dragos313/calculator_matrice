@@ -24,6 +24,7 @@ class MyGUI(QMainWindow):
         self.rbtFisier.clicked.connect(self.check)
         self.btnAlegeFisier.clicked.connect(self.alegeFisier)
         self.btnIntroducere.clicked.connect(self.introducereMatrice)
+        self.btnCalculeaza.clicked.connect(self.calculeazaMatrice)
         
     def login(self):
         if self.txtUtilizator.text() == "1" and self.txtParola.text() == "1":
@@ -72,11 +73,49 @@ class MyGUI(QMainWindow):
             A = np.array(elemeteleMatA).reshape(l, c)
             elemeteleMatB = list(map(int, matriceB.split(" ")))
             b = np.array(elemeteleMatB).reshape(l, c - l + 1)
+        elif(self.rbtAutomat.isChecked()):
+            A = np.random.randint(1, 20,(l, c))
+            b = np.random.randint(1, 20,(l, c - l + 1))
             
         self.txtMatriceExtinsa.setText(str(A))
         self.txtMatriceExtinsa_2.setText(str(b))
+        self.btnCalculeaza.setEnabled(True)
         return A, b
+    
+    def calculeazaMatrice(self):
+        A, b = self.introducereMatrice() 
+        rezultatArr = []
+        if A.shape[0] != A.shape[1]:
+            return
+        if b.shape[1] > 1 or b.shape[0] != A.shape[0]:
+            return  
+        n = len(b)
+        m = n-1
+        i = 0
+        j = i-1
+        x = np.zeros(n)
         
+        matrice_extinsa = np.concatenate((A, b), axis = 1, dtype= float)
+        
+        while i<n:
+            if matrice_extinsa[i][i] == 0.0:
+                return
+            for j in range(i+1, n):
+                coeficient_scalare = matrice_extinsa[j][i] / matrice_extinsa[i][i]
+                matrice_extinsa[j] = matrice_extinsa[j] - (coeficient_scalare * matrice_extinsa[i])
+            i = i + 1
+        
+        x[m] = matrice_extinsa[m][n] / matrice_extinsa[m][m]
+        
+        for k in range (n-2, -1, -1):
+            x[k] = matrice_extinsa[k][n]
+            for j in range(k + 1, n):
+                x[k] = x[k] - matrice_extinsa[k][j] * x[j]
+            x[k] = x[k] / matrice_extinsa[k][k]
+    
+        for rezultat in range(n):
+            rezultatArr.append(str(f"x{rezultat} este {x[rezultat]}"))
+        self.txtRezultat.setText(str(rezultatArr))
         
 
 def main():
@@ -86,7 +125,7 @@ def main():
 
 main()
 
-
+"""
 def eliminare_gauss(A, b):
     if A.shape[0] != A.shape[1]:
         return
@@ -162,3 +201,4 @@ def eliminare_gaussPP(A, b):
     for rezultat in range(n):
         print(f"x{rezultat} is {x[rezultat]}")      
 eliminare_gaussPP(A, b)        
+"""
