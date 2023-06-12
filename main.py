@@ -7,6 +7,12 @@ from PyQt5 import uic
 A = np.array([[1,1,3],[0,1,3],[-1,3,0]])
 b = np.array([[1],[3],[5]])
 
+class DespreWindow(QDialog):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("Despre.ui", self)
+        self.setWindowTitle("Despre")
+
 class MyGUI(QMainWindow):
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     def __init__(self):
@@ -17,15 +23,21 @@ class MyGUI(QMainWindow):
         self.UiComponents()
         
         self.show()
+        self.actionDespre.triggered.connect(self.arataDespre)
+    def arataDespre(self):
+        self.d = DespreWindow()
+        self.d.show()
     def UiComponents(self):
         self.btnAutentificare.clicked.connect(self.login)
         self.actionInchide.triggered.connect(exit)
+        self.actionLog_Out.triggered.connect(self.logout)
         self.rbtManual.clicked.connect(self.check)
         self.rbtFisier.clicked.connect(self.check)
+        self.rbtAutomat.clicked.connect(self.check)
         self.btnAlegeFisier.clicked.connect(self.alegeFisier)
         self.btnIntroducere.clicked.connect(self.introducereMatrice)
         self.btnCalculeaza.clicked.connect(self.calculeazaMatrice)
-        
+     
     def login(self):
         if self.txtUtilizator.text() == "1" and self.txtParola.text() == "1":
             self.lblIntrebare.setEnabled(True)   
@@ -43,6 +55,32 @@ class MyGUI(QMainWindow):
             message.setText("Credentiale invalide.")      
             message.exec_()
             
+    def logout(self):
+            self.txtUtilizator.setText("")
+            self.txtParola.setText("")
+            self.lblIntrebare.setEnabled(False)   
+            self.rbtManual.setEnabled(False)
+            self.rbtFisier.setEnabled(False)
+            self.rbtAutomat.setEnabled(False)
+            self.btnIntroducere.setEnabled(False)
+            self.txtLinii.setEnabled(False)
+            self.txtColoane.setEnabled(False)
+            self.txtManualA.setEnabled(False)
+            self.txtManualB.setEnabled(False)
+            self.lblDimensiune.setEnabled(False)
+            self.lblIntrebare_3.setEnabled(False)
+            self.lblIntrebare_4.setEnabled(False)
+            self.btnCalculeaza.setEnabled(False)
+            self.btnAlegeFisier.setEnabled(False)
+            self.txtMatriceExtinsa.setText("")
+            self.txtMatriceExtinsa_2.setText("")
+            self.txtRezultat.setText("")
+            self.txtLinii.setText("") 
+            self.txtColoane.setText("") 
+            self.txtManualA.setText("")
+            self.txtManualB.setText("") 
+            self.txtFisier.setText("")     
+                  
     def alegeFisier(self):
         fname = QFileDialog.getOpenFileName(self, 'Open file')
         self.txtFisier.setText(fname[0])
@@ -98,6 +136,8 @@ class MyGUI(QMainWindow):
     def calculeazaMatrice(self):
         A, b = self.introducereMatrice() 
         rezultatArr = []
+        qm = QMessageBox()
+        ret = qm.question(self,'', "Vrei sa folosesc pivotarea?", qm.Yes | qm.No)
         if A.shape[0] != A.shape[1]:
             return
         if b.shape[1] > 1 or b.shape[0] != A.shape[0]:
@@ -111,6 +151,10 @@ class MyGUI(QMainWindow):
         matrice_extinsa = np.concatenate((A, b), axis = 1, dtype= float)
         
         while i<n:
+            if ret == qm.Yes:
+                for p in range(i+1, n):
+                    if abs(matrice_extinsa[i,i]) < abs(matrice_extinsa[p,i]):
+                        matrice_extinsa[[p, i]] = matrice_extinsa[[i, p]]
             if matrice_extinsa[i][i] == 0.0:
                 return
             for j in range(i+1, n):
