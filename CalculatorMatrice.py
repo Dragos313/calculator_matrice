@@ -115,6 +115,13 @@ class MyGUI(QMainWindow):
             message.setText("Numarul de linii si/sau coloane este invalid.")      
             message.exec_()
             return
+        if (not self.rbtManual.isChecked() and not self.rbtFisier.isChecked() and not self.rbtAutomat.isChecked()):
+            message = QMessageBox()
+            message.setWindowTitle("Calculator matrice")
+            message.setWindowIcon(QtGui.QIcon('matrix.png'))
+            message.setText("Trebuie sa selectezi cel putin o optiune")      
+            message.exec_()
+            return
         
         l = int(float(linii))
         c = int(float(coloane))
