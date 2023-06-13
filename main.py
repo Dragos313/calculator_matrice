@@ -39,7 +39,7 @@ class MyGUI(QMainWindow):
         self.btnCalculeaza.clicked.connect(self.calculeazaMatrice)
      
     def login(self):
-        if self.txtUtilizator.text() == "1" and self.txtParola.text() == "1":
+        if self.txtUtilizator.text() == "student" and self.txtParola.text() == "sharpmind":
             self.lblIntrebare.setEnabled(True)   
             self.rbtManual.setEnabled(True)
             self.rbtFisier.setEnabled(True)
@@ -148,35 +148,35 @@ class MyGUI(QMainWindow):
         rezultatArr = []
         
         qm = QMessageBox()
-        ret = qm.question(self,'', "Vrei sa folosesc pivotarea?", qm.Yes | qm.No)
+        ret = qm.question(self,'', "Vrei sa folosesc pivotarea partiala?", qm.Yes | qm.No)
         
-        if A.shape[0] != A.shape[1]:
+        if A.shape[0] != A.shape[1]: #verific daca matricea A este matrice de forma patrtatica
             return
-        if b.shape[1] > 1 or b.shape[0] != A.shape[0]:
+        if b.shape[1] > 1 or b.shape[0] != A.shape[0]: #verific daca matricea b are mai mult de o coloana si daca are acelasi numar de linii ca matricea A
             return  
         n = len(b)
         m = n-1
         i = 0
         j = i-1
-        x = np.zeros(n)
+        x = np.zeros(n) #initializarea vectorului x cu n randuri si 1 coloana
         
         matrice_extinsa = np.concatenate((A, b), axis = 1, dtype= float)
         
         while i<n:
             if ret == qm.Yes:
-                for p in range(i+1, n):
-                    if abs(matrice_extinsa[i,i]) < abs(matrice_extinsa[p,i]):
-                        matrice_extinsa[[p, i]] = matrice_extinsa[[i, p]]
-            if matrice_extinsa[i][i] == 0.0:
+                for p in range(i+1, n): #i+1 deorece nu vreau sa verific peste diagonala principala
+                    if abs(matrice_extinsa[i,i]) < abs(matrice_extinsa[p,i]): #daca valoarea absoluta a elementului de pe diagonala principala este mai mic decat absolutul orcarui element de sub digonala principala
+                        matrice_extinsa[[p, i]] = matrice_extinsa[[i, p]] #o sa schimb randurile intre ele
+            if matrice_extinsa[i][i] == 0.0: #Verific daca exista vre-o valoare 0 pe diagonala principala
                 return
-            for j in range(i+1, n):
+            for j in range(i+1, n): #iterez rand dupa rand si creez zerouri sub diagonala principala
                 coeficient_scalare = matrice_extinsa[j][i] / matrice_extinsa[i][i]
-                matrice_extinsa[j] = matrice_extinsa[j] - (coeficient_scalare * matrice_extinsa[i])
+                matrice_extinsa[j] = matrice_extinsa[j] - (coeficient_scalare * matrice_extinsa[i])#R2 - (R2/R1) * R1
             i = i + 1
+        #substitutia inapoi
+        x[m] = matrice_extinsa[m][n] / matrice_extinsa[m][m] #rezolv ultimul rand
         
-        x[m] = matrice_extinsa[m][n] / matrice_extinsa[m][m]
-        
-        for k in range (n-2, -1, -1):
+        for k in range (n-2, -1, -1): #rezolv si restul matricei incepand de la penultimul rand 
             x[k] = matrice_extinsa[k][n]
             for j in range(k + 1, n):
                 x[k] = x[k] - matrice_extinsa[k][j] * x[j]

@@ -502,7 +502,7 @@
     </font>
    </property>
    <property name="text">
-    <string>dimensiune cu metoda eliminarii Gauss fara pivotare si pivotare totala</string>
+    <string>dimensiune cu metoda eliminarii Gauss fara pivotare si pivotare partiala</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
