@@ -1084,7 +1084,7 @@
      <rect>
       <x>10</x>
       <y>70</y>
-      <width>141</width>
+      <width>171</width>
       <height>16</height>
      </rect>
     </property>
@@ -1616,15 +1616,30 @@
    <property name="text">
     <string>Inchide</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Cambria</family>
+    </font>
+   </property>
   </action>
   <action name="actionDespre">
    <property name="text">
     <string>Despre</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Cambria</family>
+    </font>
+   </property>
   </action>
   <action name="actionLog_Out">
    <property name="text">
     <string>Log Out</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Cambria</family>
+    </font>
    </property>
   </action>
  </widget>

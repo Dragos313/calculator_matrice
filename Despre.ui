@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>307</width>
-    <height>186</height>
+    <width>416</width>
+    <height>282</height>
    </rect>
   </property>
   <property name="palette">
@@ -25,9 +25,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -43,27 +43,27 @@
      <colorrole role="Midlight">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>247</red>
-        <green>231</green>
-        <blue>198</blue>
+        <red>242</red>
+        <green>242</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Dark">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>120</red>
-        <green>104</green>
-        <blue>71</blue>
+        <red>115</red>
+        <green>114</green>
+        <blue>109</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Mid">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>160</red>
-        <green>139</green>
-        <blue>95</blue>
+        <red>153</red>
+        <green>153</green>
+        <blue>146</blue>
        </color>
       </brush>
      </colorrole>
@@ -106,9 +106,9 @@
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -124,9 +124,9 @@
      <colorrole role="AlternateBase">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>247</red>
-        <green>231</green>
-        <blue>198</blue>
+        <red>242</red>
+        <green>242</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
@@ -162,9 +162,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -180,27 +180,27 @@
      <colorrole role="Midlight">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>247</red>
-        <green>231</green>
-        <blue>198</blue>
+        <red>242</red>
+        <green>242</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Dark">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>120</red>
-        <green>104</green>
-        <blue>71</blue>
+        <red>115</red>
+        <green>114</green>
+        <blue>109</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Mid">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>160</red>
-        <green>139</green>
-        <blue>95</blue>
+        <red>153</red>
+        <green>153</green>
+        <blue>146</blue>
        </color>
       </brush>
      </colorrole>
@@ -243,9 +243,9 @@
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -261,9 +261,9 @@
      <colorrole role="AlternateBase">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>247</red>
-        <green>231</green>
-        <blue>198</blue>
+        <red>242</red>
+        <green>242</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
@@ -290,18 +290,18 @@
      <colorrole role="WindowText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>120</red>
-        <green>104</green>
-        <blue>71</blue>
+        <red>115</red>
+        <green>114</green>
+        <blue>109</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -317,36 +317,36 @@
      <colorrole role="Midlight">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>247</red>
-        <green>231</green>
-        <blue>198</blue>
+        <red>242</red>
+        <green>242</green>
+        <blue>237</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Dark">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>120</red>
-        <green>104</green>
-        <blue>71</blue>
+        <red>115</red>
+        <green>114</green>
+        <blue>109</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Mid">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>160</red>
-        <green>139</green>
-        <blue>95</blue>
+        <red>153</red>
+        <green>153</green>
+        <blue>146</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Text">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>120</red>
-        <green>104</green>
-        <blue>71</blue>
+        <red>115</red>
+        <green>114</green>
+        <blue>109</blue>
        </color>
       </brush>
      </colorrole>
@@ -362,27 +362,27 @@
      <colorrole role="ButtonText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>120</red>
-        <green>104</green>
-        <blue>71</blue>
+        <red>115</red>
+        <green>114</green>
+        <blue>109</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -398,9 +398,9 @@
      <colorrole role="AlternateBase">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>240</red>
-        <green>208</green>
-        <blue>142</blue>
+        <red>230</red>
+        <green>229</green>
+        <blue>219</blue>
        </color>
       </brush>
      </colorrole>
@@ -425,25 +425,100 @@
     </disabled>
    </palette>
   </property>
+  <property name="font">
+   <font>
+    <family>Cambria</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>50</y>
+     <x>10</x>
+     <y>10</y>
      <width>231</width>
      <height>21</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>11</pointsize>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
     <string>Creat de catre Pana Dragos Andrei</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>401</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Student la Facultatea de Matematica si Informatica, anul 2, grupa 4</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>401</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Aceasta aplicatie a fost creata pentru calcularea matricelor de orice </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>401</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>dimensiune cu metoda eliminarii Gauss fara pivotare si pivotare totala</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>120</y>
+     <width>141</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>matrix (3).png</pixmap>
    </property>
   </widget>
  </widget>
